@@ -13,16 +13,13 @@ Console.WriteLine($"You Select {menu.KeyChar}");
 */
 
 
+//
+namespace BikeSpecsApplication
 
-
-using System;
-using System.Diagnostics.Contracts;
-
-namespace StringManipulation
 {
-    class Program
+    class BikeSpecsApplication
     {
-        public static List<String> userList { get; set; } = new List<String>();
+        public static List<global::BikeSpecsApplication.Bike> bikeList { get; set; } = new List<global::BikeSpecsApplication.Bike>();
         static void Main(string[] args)
         {
            
@@ -36,9 +33,10 @@ namespace StringManipulation
         {
             Console.Clear();
             Console.WriteLine("Choose an option:");
-            Console.WriteLine("1) Add new entry ");
-            Console.WriteLine("2) See the entries");
-            Console.WriteLine("3) Exit");
+            Console.WriteLine("1) Add new bike ");
+            Console.WriteLine("2) See the bike entries");
+            Console.WriteLine("3) See the car entries");
+            Console.WriteLine("4) Exit");
             Console.Write("\r\nSelect an option: ");
 
             switch (Console.ReadLine())
@@ -47,7 +45,7 @@ namespace StringManipulation
                     CaptureInput();
                     return true;
                 case "2":
-                    ShowList();
+                    showBikeList();
                     return true;
                 case "3":
                     return false;
@@ -58,44 +56,53 @@ namespace StringManipulation
         public static void CaptureInput()
         {
             Console.Clear();
+
+            var Bike = new global::BikeSpecsApplication.Bike();
+
             Console.Write("Enter the Brand of the bike : ");
-            var brand = Console.ReadLine(); 
-            userList.Add(brand);
+            var brand = Console.ReadLine();
+            Bike.Brand = brand;
+
             Console.Write("Enter the Model of the bike : ");
             var model = Console.ReadLine();
-            userList.Add(model);
+            Bike.Model = model;
+
             Console.Write("Enter the Age of the bike : ");
             var age = Console.ReadLine();
-            userList.Add(age);
+            Bike.Age = age;
+
+
             Console.Write("Enter the Category of the bike : ");
             var category = Console.ReadLine();
-            userList.Add(category);
+            Bike.Category = category;
+
+
             Console.Write("Enter the CC of the bike : ");
-            Console.ReadLine() ;
+            var cc = Console.ReadLine();
+            Bike.CC = cc;
 
-           
-      /*  public static string StoreInput()
-        {
-            String input = Console.ReadLine();
-            List<String> userList = new List<String>();
-            userList.Add(input);
 
-      
-            foreach (var user in userList)
-            {
-                Console.WriteLine(user);
-            }*/
-
+            bikeList.Add(Bike);
 
 
         }
        
-        public static void ShowList()
+        public static void showBikeList()
         {
             Console.Clear();
-            foreach (var user in userList)
+            foreach (var bike in bikeList)
             {
-                Console.WriteLine(user);
+                string brand = bike.Brand;
+                string model = bike.Model;
+                string age = bike.Age;
+                string category = bike.Category;
+                string cc = bike.CC;
+                Console.Write("bike's brand : ",brand);
+                Console.Write(" bike : model", model);
+                Console.Write("bike age: ", age);
+                Console.Write("bike category: ", category);
+                Console.Write(" bike cc: ",cc);
+                Console.Write("Next bike : ");
             }
             Console.ReadKey();
 
