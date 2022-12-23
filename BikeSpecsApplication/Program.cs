@@ -59,14 +59,17 @@ namespace StringManipulation
         {
             Console.Clear();
             Console.Write("Enter the Brand of the bike : ");
-            var input = Console.ReadLine(); 
-            userList.Add(input);
+            var brand = Console.ReadLine(); 
+            userList.Add(brand);
             Console.Write("Enter the Model of the bike : ");
-            Console.ReadLine();
+            var model = Console.ReadLine();
+            userList.Add(model);
             Console.Write("Enter the Age of the bike : ");
-            Console.ReadLine();
+            var age = Console.ReadLine();
+            userList.Add(age);
             Console.Write("Enter the Category of the bike : ");
-            Console.ReadLine();
+            var category = Console.ReadLine();
+            userList.Add(category);
             Console.Write("Enter the CC of the bike : ");
             Console.ReadLine() ;
 
@@ -90,35 +93,15 @@ namespace StringManipulation
         public static void ShowList()
         {
             Console.Clear();
-            Console.WriteLine(userList);
+            foreach (var user in userList)
+            {
+                Console.WriteLine(user);
+            }
             Console.ReadKey();
 
 
-
-
-
-
-
-
         }
-        class ListShare
-        {
-            public static List<String> DataList { get; set; } = new List<String>();
-        }
-
-        class ListUse
-        {
-            public void AddData()
-            {
-                ListShare.DataList.Add("content ...");
-            }
-
-            public void ClearData()
-            {
-                ListShare.DataList.Clear();
-            }
-        }
-
+        
 
     }
 }
