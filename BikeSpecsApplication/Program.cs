@@ -16,11 +16,13 @@ Console.WriteLine($"You Select {menu.KeyChar}");
 
 
 using System;
+using System.Diagnostics.Contracts;
 
 namespace StringManipulation
 {
     class Program
     {
+        public static List<String> userList { get; set; } = new List<String>();
         static void Main(string[] args)
         {
            
@@ -53,12 +55,8 @@ namespace StringManipulation
                     return true;
             }
         }
-
         public static void CaptureInput()
         {
-            List<String> userList = new List<String>();
-
-
             Console.Clear();
             Console.Write("Enter the Brand of the bike : ");
             var input = Console.ReadLine(); 
@@ -72,7 +70,7 @@ namespace StringManipulation
             Console.Write("Enter the CC of the bike : ");
             Console.ReadLine() ;
 
-            
+           
       /*  public static string StoreInput()
         {
             String input = Console.ReadLine();
@@ -85,17 +83,44 @@ namespace StringManipulation
                 Console.WriteLine(user);
             }*/
 
-        }
 
+
+        }
+       
         public static void ShowList()
         {
-           
             Console.Clear();
-
-            Console.WriteLine("This is your previous Entry" );
+            Console.WriteLine(userList);
             Console.ReadKey();
 
+
+
+
+
+
+
+
         }
+        class ListShare
+        {
+            public static List<String> DataList { get; set; } = new List<String>();
+        }
+
+        class ListUse
+        {
+            public void AddData()
+            {
+                ListShare.DataList.Add("content ...");
+            }
+
+            public void ClearData()
+            {
+                ListShare.DataList.Clear();
+            }
+        }
+
 
     }
 }
+
+    
