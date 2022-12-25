@@ -13,6 +13,7 @@ Console.WriteLine($"You Select {menu.KeyChar}");
 */
 
 
+
 //
 namespace BikeSpecsApplication
 
@@ -46,7 +47,8 @@ namespace BikeSpecsApplication
             Console.WriteLine("2) Add new car");
             Console.WriteLine("3) See the bike entries");
             Console.WriteLine("4) See the car entries");
-            Console.WriteLine("5) Exit");
+            Console.WriteLine("5) See the car and the bike entries");
+            Console.WriteLine("6) Exit");
             Console.Write("\r\nSelect an option: ");
 
             //waiting for user respond to continue
@@ -65,6 +67,9 @@ namespace BikeSpecsApplication
                     showCarList();
                     return true;
                 case "5":
+                    showCarAndBikeList();
+                    return true;
+                case "6":
                     return false;
                 default:
                     return true;
@@ -191,6 +196,44 @@ namespace BikeSpecsApplication
             }
             Console.ReadKey();
 
+
+
+        }
+        public static void showCarAndBikeList() 
+        {
+        
+            Console.Clear();
+
+            foreach(var car in carList)
+            {
+                string brand = car.Brand;
+                string model = car.Model;
+                string khm = car.Khm;
+                string price = car.Price;
+                string seats = car.Seats;
+                Console.WriteLine("Car brand:" + brand);
+                Console.WriteLine("\nCar Model:" + model);
+                Console.WriteLine("Car age: " + khm);
+                Console.WriteLine("Car category: " + price);
+                Console.WriteLine("Car cc: " + seats);
+            }
+            foreach(var bike in bikeList)
+            {
+                string brand = bike.Brand;
+                string model = bike.Model;
+                string age = bike.Age;
+                string category = bike.Category;
+                string cc = bike.CC;
+
+                //Printing message to the user according to the entries 
+                Console.WriteLine("Bike brand:" + brand);
+                Console.WriteLine("\nBike Model:" + model);
+                Console.WriteLine("Bike age: " + age);
+                Console.WriteLine("Bike category: " + category);
+                Console.WriteLine("Bike cc: " + cc);
+
+            }
+            Console.ReadKey();
 
 
         }
