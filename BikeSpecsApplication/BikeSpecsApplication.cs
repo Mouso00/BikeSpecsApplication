@@ -14,7 +14,6 @@ Console.WriteLine($"You Select {menu.KeyChar}");
 
 
 
-//
 namespace BikeSpecsApplication
 
 {
@@ -162,11 +161,15 @@ namespace BikeSpecsApplication
                 string cc = bike.CC;
 
                 //Printing message to the user according to the entries 
-                Console.WriteLine("Bike brand:" + brand);
-                Console.WriteLine("\nBike Model:" + model);
-                Console.WriteLine("Bike age: " + age);
-                Console.WriteLine("Bike category: " + category);
-                Console.WriteLine("Bike cc: " + cc);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nBike brand:" + brand);
+                Console.ResetColor(); // To return colors back
+
+
+                Console.WriteLine("\nModel:" + model);
+                Console.WriteLine("Age: " + age);
+                Console.WriteLine("Category: " + category);
+                Console.WriteLine("Cc: " + cc);
             }
             // Read so the program still Live till the user tap otherwise it will pop up and close directly
             Console.ReadKey();
@@ -186,11 +189,16 @@ namespace BikeSpecsApplication
                 string seats = car.Seats;
 
                 //Printing message to the user according to the entries 
-                Console.WriteLine("Car brand:" + brand);
-                Console.WriteLine("\nCar Model:" + model);
-                Console.WriteLine("Car age: " + khm );
-                Console.WriteLine("Car category: " + price);
-                Console.WriteLine("Car cc: " + seats);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nCar brand:" + brand);
+                Console.ResetColor(); // To return colors back
+
+
+
+                Console.WriteLine("\nModel:" + model);
+                Console.WriteLine("Age: " + khm );
+                Console.WriteLine("Category: " + price);
+                Console.WriteLine("Cc: " + seats);
 
 
             }
@@ -211,11 +219,16 @@ namespace BikeSpecsApplication
                 string khm = car.Khm;
                 string price = car.Price;
                 string seats = car.Seats;
-                Console.WriteLine("Car brand:" + brand);
-                Console.WriteLine("\nCar Model:" + model);
-                Console.WriteLine("Car age: " + khm);
-                Console.WriteLine("Car category: " + price);
-                Console.WriteLine("Car cc: " + seats);
+
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nCar Brand:" + brand);
+                Console.ResetColor(); // To return colors back
+
+
+                Console.WriteLine("\nModel:" + model);
+                Console.WriteLine("Age: " + khm);
+                Console.WriteLine("Category: " + price);
+                Console.WriteLine("Cc: " + seats);
             }
             foreach(var bike in bikeList)
             {
@@ -226,14 +239,22 @@ namespace BikeSpecsApplication
                 string cc = bike.CC;
 
                 //Printing message to the user according to the entries 
-                Console.WriteLine("Bike brand:" + brand);
-                Console.WriteLine("\nBike Model:" + model);
-                Console.WriteLine("Bike age: " + age);
-                Console.WriteLine("Bike category: " + category);
-                Console.WriteLine("Bike cc: " + cc);
+
+
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nBike Brand:" + brand);
+                Console.ResetColor(); // To return colors back
+
+                Console.WriteLine("\nModel:" + model);
+                Console.WriteLine("Aage: " + age);
+                Console.WriteLine("Category: " + category);
+                Console.WriteLine("Cc: " + cc);
 
             }
             Console.ReadKey();
+
+
+         
 
 
         }
