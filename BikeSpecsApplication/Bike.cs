@@ -1,11 +1,13 @@
 
 namespace BikeSpecsApplication{
-    public class Bike
+    public class Bike 
     {
-       public string Brand { get; set; }
-        public string Model { get; set; }
-        public string Age { get; set; }
-        public string Category { get; set; }
-        public string CC { get; set; }
+       
+        public string Color { get; set; }
+        public string engineStroke { get; set; }
+        public string  wheelsNumber { get; set; }
+        public string costumeSeat { get; set; }
+
+        public string cc { get; set; }
     }
 }

@@ -8,13 +8,11 @@ namespace BikeSpecsApplication
 {
     public class Car
     {
-        public string Model { get; set; }
-        public string Brand { get; set; }
-        public string Khm { get; set; }
-        public string Price { get; set; }
-
-        public string Seats { get; set; }
-
+        public string seats { get; set; }
+        public string fuelType { get; set; }
+        public string gearBox { get; set; }
+        public string doors { get; set; }
+        public string cc { get; set; }
 
     }
 }
