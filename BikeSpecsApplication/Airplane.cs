@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace BikeSpecsApplication
 {
-    class Car : Vehicle
+    class Airplane : Vehicle
     {
-        public string speed { get; set; }
-        
+        public string planeType { get; set; } 
     }
 }
