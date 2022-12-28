@@ -8,7 +8,7 @@ namespace BikeSpecsApplication
 {
     class Car : Vehicle
     {
-        public string speed { get; set; }
+        public int speed { get; set; }
         
     }
 }

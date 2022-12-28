@@ -10,7 +10,22 @@ var menu = Console.ReadKey();
 Console.WriteLine("");
 
 Console.WriteLine($"You Select {menu.KeyChar}");
+
+
+
+
+
+// 1 Price  & speed na gini int 
+Se periptosi pou xristis dosi timi megalitiri apo 10k sta car na na petai minima  "overprice" kai sta plain i timi 8a einai 100k se periptoi pou o xristis ktlp tha grapsi mnm  pls give value under 10k kai 8a proxirisi mono an vali sosto input 
+
+2) an dosi 3 fores lathos apadisi na tu petas minima sorry we do not accept prices over 10k kai na girnai sto main menu 
+
+3) Na alazi mesa sto menu prin proxorisi gia to epomeno entry 
+
 */
+
+
+// Tip / i vehicle list 8a svisti oloklirotika  line 44 ++ 
 
 namespace BikeSpecsApplication
 
@@ -22,6 +37,10 @@ namespace BikeSpecsApplication
        // public static List<global::BikeSpecsApplication.Bike> bikeList { get; set; } = new .List<global::BikeSpecsApplication.Bike>();
 
         //Initializing a global list for the Car object 
+
+
+
+
         public static List<Vehicle> vehicleList { get; set; } = new List<Vehicle>();
         public static List<Car> carList { get; set; } = new List<Car>();
         public static List<Airplane> airplaneList { get; set; } = new List<Airplane>();
@@ -92,12 +111,14 @@ namespace BikeSpecsApplication
             Car.year = year;
             
             Console.Write("Enter the price of the Car : ");         
-            var price = Console.ReadLine(); 
-            Car.price = price;
+            
+            var price = Console.ReadLine();
+            
+            Car.price = Convert.ToInt32(price);
 
             Console.Write("Enter the speed of the Car : ");
             var speed = Console.ReadLine();
-            Car.speed = speed;
+            Car.speed = Convert.ToInt32(speed);
 
             carList.Add(Car);
             vehicleList.Add(Car);
@@ -110,8 +131,8 @@ namespace BikeSpecsApplication
             {
                 string maker = car.maker;
                 string year = car.year;
-                string price = car.price;
-                string speed = car.speed;
+                int price = car.price;
+                int speed = car.speed;
                 //Printing message to the user according to the entries 
                 Console.ForegroundColor = ConsoleColor.Red; // Making the the next line with red color
                 Console.WriteLine("\nCar Maker:" + maker);
@@ -140,7 +161,7 @@ namespace BikeSpecsApplication
 
             Console.Write("Enter the price of the Plane : ");
             var price = Console.ReadLine();
-            Airplane.price = price;
+            Airplane.price = Convert.ToInt32(price);
             Console.Write("Enter the type of the Plane ");
             var planeType = Console.ReadLine();
             Airplane.planeType = planeType;
@@ -157,7 +178,7 @@ namespace BikeSpecsApplication
             {
                 string maker = plane.maker;
                 string year = plane.year;
-                string price = plane.price;
+                int price = plane.price;
                 string planeType = plane.planeType;
 
                 //Printing message to the user according to the entries 
@@ -180,7 +201,7 @@ namespace BikeSpecsApplication
             {
                 string maker = vehicle.maker;
                 string year = vehicle.year;
-                string price = vehicle.price;
+                int price = vehicle.price;
 
                 //Printing message to the user according to the entries 
                 Console.ForegroundColor = ConsoleColor.Red; // Making the the next line with red color
